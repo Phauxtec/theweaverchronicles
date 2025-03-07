@@ -63,15 +63,17 @@ body {
 }
 
 .section img {
+    width: 3.25in;
+    height: 3.25in;
     object-fit: cover;
     margin: 20px auto;
     background: gray;
-
     display: block;
-    
 }
 
 .content {
+    margin-left: 5%;
+    margin-right: 5%;
     padding: 50px 20px;
 }
 
@@ -144,10 +146,12 @@ body {
     background-color: #ffcc00;
 }
 
+
+
+
 @media screen and (max-width: 768px) {
     .red, .purple, .gold {
         font-size: 1.1em; /* Slightly larger text */
         text-shadow: none; /* Remove glow if it's too harsh */
     }
-
 }
