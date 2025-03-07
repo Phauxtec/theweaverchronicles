@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("✅ script.js is loaded");
 
     // Show or hide the banner based on the initial page load
-    if (isOnIndexPage()) {
+    if (isOnIndexPage() && window.scrollY === 0) {
         showBanner();
         loadContent("sections/about.html");
     } else {
@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Hide banner when scrolling down, show when scrolled back to the top
+    // Detect scroll position and toggle banner
     window.addEventListener("scroll", function () {
         if (window.scrollY === 0 && isOnIndexPage()) {
-            showBanner(); // Show banner when scrolled all the way up
+            showBanner(); // Show banner when at the very top
         } else {
             hideBanner(); // Hide banner when scrolling down
         }
