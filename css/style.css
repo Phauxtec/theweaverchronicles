@@ -149,7 +149,7 @@ body {
 
 /* Background container for desktop */
 .page-container {
-    max-width: 1200px; /* Adjust based on preference */
+    max-width: 800px; /* Adjust based on preference */
     margin: 0 auto; /* Centers the content */
     background-color: #1a1a1a; /* Dark grey background */
     padding: 20px; /* Padding inside the container */
