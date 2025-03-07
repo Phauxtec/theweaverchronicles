@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("✅ script.js is loaded");
 
-    // Show or hide the banner based on the initial page load
-    if (isOnIndexPage()) {
+    // Ensure banner is visible only on the index page and at the top
+    if (isOnIndexPage() && window.scrollY === 0) {
         showBanner();
         loadContent("sections/about.html");
     } else {
@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Hide banner when scrolling down, show when scrolled back to the top
+    // Show/hide banner only when user scrolls up/down
     window.addEventListener("scroll", function () {
         if (window.scrollY === 0 && isOnIndexPage()) {
-            showBanner(); // Show banner when scrolled all the way up
+            showBanner(); // Show banner if scrolled all the way up
         } else {
             hideBanner(); // Hide banner when scrolling down
         }
@@ -30,19 +30,18 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function loadContent(page) {
-    const fullPath = `/theweaverchronicles/${page}`;
-    console.log(`🔄 Fetching: ${fullPath}`);
+    console.log(`🔄 Fetching: ${page}`);
 
-    fetch(fullPath)
+    fetch(page)
         .then(response => {
             if (!response.ok) {
-                throw new Error(`❌ Error: ${fullPath} not found (Status ${response.status})`);
+                throw new Error(`❌ Error: ${page} not found (Status ${response.status})`);
             }
             return response.text();
         })
         .then(data => {
             document.getElementById("content").innerHTML = data;
-            console.log(`✅ Successfully loaded ${fullPath}`);
+            console.log(`✅ Successfully loaded ${page}`);
         })
         .catch(error => {
             console.error(error);
@@ -59,7 +58,9 @@ function isOnIndexPage() {
 function hideBanner() {
     const banner = document.getElementById("banner");
     if (banner) {
-        banner.style.display = "none";
+        banner.style.opacity = "0";
+        banner.style.pointerEvents = "none";
+        banner.style.transition = "opacity 0.5s ease-in-out";
     }
 }
 
@@ -67,6 +68,8 @@ function hideBanner() {
 function showBanner() {
     const banner = document.getElementById("banner");
     if (banner && isOnIndexPage()) {
-        banner.style.display = "block";
+        banner.style.opacity = "1";
+        banner.style.pointerEvents = "auto";
+        banner.style.display = "flex"; // Ensures the banner is visible
     }
 }
