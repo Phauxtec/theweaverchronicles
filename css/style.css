@@ -73,11 +73,10 @@ body {
     vertical-align: middle;
 }
 
-/* ✅ Fix the content section spacing */
 .content {
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 5vh; /* Ensures it starts AFTER the banner */
+    
     padding: 50px 20px;
 }
 
