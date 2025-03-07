@@ -51,13 +51,17 @@ body {
     align-items: center;
     font-size: 40px;
     font-weight: bold;
-    text-shadow: 2px 2px 10px black;
-    background-color: rgba(0, 0, 0, 0.95);
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8); /* Stronger shadow for readability */
+    color: white; /* Ensure text is white */
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.75); /* Slightly transparent black background */
     animation: breathing 4s infinite ease-in-out;
     z-index: 9;
     opacity: 1;
     transition: opacity 1s ease-in-out;
 }
+
 
 /* ✅ Fix the content section spacing */
 .content {
