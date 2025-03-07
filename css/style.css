@@ -66,9 +66,10 @@ body {
     width: 3.25in;
     height: 3.25in;
     object-fit: cover;
-    display: block;
     margin: 20px auto;
     background: gray;
+
+    display: inline-block;
     vertical-align: middle;
 }
 
