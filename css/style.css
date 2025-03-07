@@ -149,7 +149,7 @@ body {
 
 /* Background container for desktop */
 .page-container {
-    max-width: 800px; /* Adjust based on preference */
+    max-width: 1600px; /* Adjust based on preference */
     margin: 0 auto; /* Centers the content */
     background-color: #1a1a1a; /* Dark grey background */
     padding: 20px; /* Padding inside the container */
@@ -164,6 +164,7 @@ body {
         text-shadow: none; /* Remove glow if it's too harsh */
     }
 }
+
 
 /* ✅ Responsive Fix: Keep full-width on mobile */
 @media screen and (max-width: 768px) {
