@@ -1,17 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("✅ script.js is loaded");
 
-    // Load default page
-    loadContent("sections/about.html");
+    // Load default content only if we are on the index page
+    if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/theweaverchronicles/") {
+        loadContent("sections/about.html");
+    } else {
+        hideBanner(); // Ensure banner stays hidden if user lands on a different page
+    }
 
-    // Hide banner when user navigates
+    // Attach click events to navigation links
     document.querySelectorAll(".nav a").forEach(link => {
         link.addEventListener("click", function (event) {
             event.preventDefault();
-            const page = this.getAttribute("data-page");
+            const page = this.getAttribute("onclick").match(/'([^']+)'/)[1];
             loadContent(page);
-            hideBanner(); // Hide the banner on navigation
+            hideBanner(); // Hide the banner when navigating
         });
+    });
+
+    // Hide banner when scrolling
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) { // Adjust threshold if needed
+            hideBanner();
+        }
     });
 });
 
@@ -36,14 +47,18 @@ function loadContent(page) {
         });
 }
 
-// Hide banner on navigation or scroll
+// Function to hide the banner
 function hideBanner() {
-    document.getElementById("banner").style.display = "none";
+    const banner = document.getElementById("banner");
+    if (banner) {
+        banner.style.display = "none";
+    }
 }
 
-// Hide banner when scrolling
-window.addEventListener("scroll", function () {
-    if (window.scrollY > 50) { // Adjust threshold if needed
-        hideBanner();
+// Function to show the banner only on index.html
+function showBanner() {
+    const banner = document.getElementById("banner");
+    if (banner && (window.location.pathname.endsWith("index.html") || window.location.pathname === "/theweaverchronicles/")) {
+        banner.style.display = "block";
     }
-});
+}
