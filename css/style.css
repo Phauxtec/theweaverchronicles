@@ -93,3 +93,10 @@ body {
     font-weight: bold;
     text-shadow: 1px 1px 4px rgba(255, 215, 0, 0.6);
 }
+
+@media screen and (max-width: 768px) {
+    .red, .purple, .gold {
+        font-size: 1.1em; /* Slightly larger text */
+        text-shadow: none; /* Remove glow if it's too harsh */
+    }
+}
