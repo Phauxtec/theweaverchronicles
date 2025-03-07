@@ -163,4 +163,7 @@ body {
         display: block;
         
     }
+    .content {
+        padding: 50px 20px;
+    }
 }
