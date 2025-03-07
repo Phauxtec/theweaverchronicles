@@ -63,17 +63,19 @@ body {
 }
 
 .section img {
-    width: 6.25in;
-    height: 6.25in;
+    width: 3.25in;
+    height: 3.25in;
     object-fit: cover;
     margin: 20px auto;
     background: gray;
+
     display: block;
 }
 
 .content {
     margin-left: 5%;
     margin-right: 5%;
+    margin-top: 5vh; /* Ensures it starts AFTER the banner */
     padding: 50px 20px;
 }
 
