@@ -12,7 +12,35 @@ body {
     color: white;
     overflow-x: hidden;
     display: flex;
-    justify-content: center; /* Centers page-container */
+    font-size: 18px; /* Slightly larger base text */
+}
+
+/* Heading sizes */
+h1 {
+    font-size: 3rem; /* Large for main headings */
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2.5rem; /* Increase size for sub-headings */
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 2rem; /* Slightly larger than usual */
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.75rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+h6 {
+    font-size: 1.25rem;
 }
 
 
@@ -180,4 +208,31 @@ body {
     0% { transform: scale(1); }
     50% { transform: scale(1.02); }
     100% { transform: scale(1); }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem; /* Slightly smaller on mobile */
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+    }
+
+    h6 {
+        font-size: 1.1rem;
+    }
 }
