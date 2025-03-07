@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("✅ script.js is loaded");
 
     // Ensure banner is visible only on the index page and at the top
-    if (isOnIndexPage() && window.scrollY === 0) {
-        showBanner();
-        loadContent("sections/about.html");
-    } else {
-        hideBanner();
-    }
+    //if (isOnIndexPage() && window.scrollY === 0) {
+    //    showBanner();
+    //    loadContent("sections/about.html");
+    //} else {
+    //    hideBanner();
+    //}
 
     // Attach event listeners to navigation links
     document.querySelectorAll(".nav a").forEach(link => {
