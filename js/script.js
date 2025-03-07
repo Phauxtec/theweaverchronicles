@@ -1,30 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("✅ script.js is loaded");
 
-    // Show or hide the banner based on the initial page load
-    if (isOnIndexPage() && window.scrollY === 0) {
-        showBanner();
+    // Load default content only if we are on the index page
+    if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/theweaverchronicles/") {
         loadContent("sections/about.html");
     } else {
-        hideBanner();
+        hideBanner(); // Ensure banner stays hidden if user lands on a different page
     }
 
-    // Attach event listeners to navigation links
+    // Attach click events to navigation links
     document.querySelectorAll(".nav a").forEach(link => {
         link.addEventListener("click", function (event) {
             event.preventDefault();
             const page = this.getAttribute("onclick").match(/'([^']+)'/)[1];
             loadContent(page);
-            hideBanner(); // Hide banner when navigating
+            hideBanner(); // Hide the banner when navigating
         });
     });
 
-    // Detect scroll position and toggle banner
+    // Hide banner when scrolling
     window.addEventListener("scroll", function () {
-        if (window.scrollY === 0 && isOnIndexPage()) {
-            showBanner(); // Show banner when at the very top
-        } else {
-            hideBanner(); // Hide banner when scrolling down
+        if (window.scrollY > 50) { // Adjust threshold if needed
+            hideBanner();
         }
     });
 });
@@ -50,8 +47,6 @@ function loadContent(page) {
         });
 }
 
-
-
 // Function to hide the banner
 function hideBanner() {
     const banner = document.getElementById("banner");
@@ -60,10 +55,10 @@ function hideBanner() {
     }
 }
 
-// Function to show the banner
+// Function to show the banner only on index.html
 function showBanner() {
     const banner = document.getElementById("banner");
-    if (banner && isOnIndexPage()) {
+    if (banner && (window.location.pathname.endsWith("index.html") || window.location.pathname === "/theweaverchronicles/")) {
         banner.style.display = "block";
     }
 }
