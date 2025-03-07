@@ -51,7 +51,7 @@ function loadContent(page) {
 
 // Function to check if we're on the index page
 function isOnIndexPage() {
-    return window.location.pathname.endsWith("index.html") || window.location.pathname === "/theweaverchronicles/";
+    return window.location.pathname.endsWith("index.html") || window.location.pathname === "/theweaverchronicles/index.html";
 }
 
 // Function to hide the banner
