@@ -1,5 +1,38 @@
 <section class="section">
-    <h2>Contact</h2>
+    <h2>Contact the Author</h2>
     <img src="assets/images/placeholder_contact.jpg" alt="Contact Section Placeholder">
-    <p>Connect with the creator, join discussions, and become a part of the ever-growing world...</p>
+    <p>
+        Have a question about <strong>The Weaver Chronicles?</strong>  
+        Whether you're a reader, reviewer, or industry professional, I’d love to hear from you.  
+        Fill out the form below to get in touch regarding book inquiries, collaborations, or general questions.
+    </p>
+
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Your Name">
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required placeholder="Your Email">
+
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject" required>
+            <option value="" disabled selected>Select an Inquiry Type</option>
+            <option value="general">General Question</option>
+            <option value="book-review">Book Review Request</option>
+            <option value="collaboration">Collaboration Inquiry</option>
+            <option value="media">Press & Media</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    <p>
+        📧 Prefer direct email? Reach out at <strong>contact@theweaverchronicles.com</strong>  
+        📖 Follow for updates on <a href="https://twitter.com/YOUR_HANDLE" target="_blank">Twitter</a> |  
+        <a href="https://instagram.com/YOUR_HANDLE" target="_blank">Instagram</a>
+    </p>
 </section>
