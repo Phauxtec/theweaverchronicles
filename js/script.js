@@ -1,13 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("✅ script.js is loaded");
 
-    // Load default content
+    // Ensure navigation links are working
+    document.querySelectorAll(".nav a").forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default navigation
+            const page = this.getAttribute("onclick").match(/'([^']+)'/)[1];
+            console.log(`🔄 Loading: ${page}`);
+            loadContent(page);
+        });
+    });
+
+    // Load default page
     loadContent("sections/about.html");
 });
 
 function loadContent(page) {
     const fullPath = `/theweaverchronicles/${page}`;
-    console.log(`🔄 Loading: ${fullPath}`);
+    console.log(`🔄 Fetching: ${fullPath}`);
 
     fetch(fullPath)
         .then(response => {
