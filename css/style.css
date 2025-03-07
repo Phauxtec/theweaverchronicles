@@ -62,10 +62,7 @@ body {
 }
 
 /* ✅ Fix the content section spacing */
-.content {
-    margin-top: 100vh; /* Ensures it starts AFTER the banner */
-    padding: 50px 20px;
-}
+
 
 /* ✅ Fix keyframes to smooth breathing effect */
 @keyframes breathing {
