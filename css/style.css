@@ -63,12 +63,13 @@ body {
 }
 
 .section img {
-    width: 6.5in;
-    height: 6.5in;
+    width: 3.25in;
+    height: 3.25in;
     object-fit: cover;
     display: block;
     margin: 20px auto;
     background: gray;
+    vertical-align: middle;
 }
 
 /* ✅ Fix the content section spacing */
@@ -107,10 +108,4 @@ body {
         font-size: 1.1em; /* Slightly larger text */
         text-shadow: none; /* Remove glow if it's too harsh */
     }
-}
-
-.inline-img {
-    vertical-align: middle;
-    width: 20px; /* Adjust size as needed */
-    height: auto;
 }
