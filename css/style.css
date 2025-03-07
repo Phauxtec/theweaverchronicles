@@ -63,8 +63,8 @@ body {
 }
 
 .section img {
-    width: 3.25in;
-    height: 3.25in;
+    width: 6.25in;
+    height: 6.25in;
     object-fit: cover;
     margin: 20px auto;
     background: gray;
