@@ -77,19 +77,19 @@ body {
 }
 
 .red {
-    color: red;
-    font-weight: bold; /* Make it stand out */
-    text-shadow: 1px 1px 4px rgba(255, 0, 0, 0.6); /* Soft glow */
+    color: red !important; /* Forces color */
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(255, 0, 0, 0.6);
 }
 
 .purple {
-    color: purple;
+    color: purple !important;
     font-weight: bold;
     text-shadow: 1px 1px 4px rgba(128, 0, 128, 0.6);
 }
 
 .gold {
-    color: gold;
+    color: gold !important;
     font-weight: bold;
     text-shadow: 1px 1px 4px rgba(255, 215, 0, 0.6);
 }
