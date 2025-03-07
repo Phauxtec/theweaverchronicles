@@ -67,7 +67,7 @@ function hideBanner() {
 // Function to show the banner
 function showBanner() {
     const banner = document.getElementById("banner");
-    if (banner && isOnIndexPage()) {
+    if (banner) {
         banner.style.opacity = "1";
         banner.style.pointerEvents = "auto";
         banner.style.display = "flex"; // Ensures the banner is visible
