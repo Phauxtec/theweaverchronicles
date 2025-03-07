@@ -73,3 +73,10 @@ function showBanner() {
         banner.style.display = "flex"; // Ensures the banner is visible
     }
 }
+
+@media screen and (max-width: 768px) {
+    .red, .purple, .gold {
+        font-size: 1.1em; /* Slightly larger text */
+        text-shadow: none; /* Remove glow if it's too harsh */
+    }
+}
