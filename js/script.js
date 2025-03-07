@@ -1,23 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("✅ script.js is loaded");
 
-    // Load the default content (About page) on first visit
+    // Load default content
     loadContent("sections/about.html");
 });
 
 function loadContent(page) {
-    console.log(`🔄 Loading: ${page}`);
+    const fullPath = `/theweaverchronicles/${page}`;
+    console.log(`🔄 Loading: ${fullPath}`);
 
-    fetch(page)
+    fetch(fullPath)
         .then(response => {
             if (!response.ok) {
-                throw new Error(`❌ Error: ${page} not found (Status ${response.status})`);
+                throw new Error(`❌ Error: ${fullPath} not found (Status ${response.status})`);
             }
             return response.text();
         })
         .then(data => {
             document.getElementById("content").innerHTML = data;
-            console.log(`✅ Successfully loaded ${page}`);
+            console.log(`✅ Successfully loaded ${fullPath}`);
         })
         .catch(error => {
             console.error(error);
