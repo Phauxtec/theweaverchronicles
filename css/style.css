@@ -108,3 +108,9 @@ body {
         text-shadow: none; /* Remove glow if it's too harsh */
     }
 }
+
+.inline-img {
+    vertical-align: middle;
+    width: 20px; /* Adjust size as needed */
+    height: auto;
+}
