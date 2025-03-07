@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("✅ script.js is loaded");
 
     // Load the default content (About page) on first visit
-    loadContent("./sections/about.html");
+    loadContent("sections/about.html");
 });
 
 function loadContent(page) {
