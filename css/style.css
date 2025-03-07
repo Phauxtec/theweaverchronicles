@@ -4,11 +4,18 @@
     box-sizing: border-box;
     font-family: 'Merriweather', serif;
 }
+
+
+/* Ensure body takes full width but centers content */
 body {
     background-color: #0d0d0d;
     color: white;
     overflow-x: hidden;
+    display: flex;
+    justify-content: center; /* Centers page-container */
 }
+
+
 .header {
     position: fixed;
     width: 100%;
@@ -76,12 +83,7 @@ body {
     padding: 50px 20px;
 }
 
-/* ✅ Fix keyframes to smooth breathing effect */
-@keyframes breathing {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
-}
+
 
 .red {
     color: red !important; /* Forces color */
@@ -145,7 +147,15 @@ body {
     background-color: #ffcc00;
 }
 
-
+/* Background container for desktop */
+.page-container {
+    max-width: 1200px; /* Adjust based on preference */
+    margin: 0 auto; /* Centers the content */
+    background-color: #1a1a1a; /* Dark grey background */
+    padding: 20px; /* Padding inside the container */
+    border-radius: 10px; /* Optional: Slightly rounded edges */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Soft glow effect */
+}
 
 
 @media screen and (max-width: 768px) {
@@ -153,4 +163,20 @@ body {
         font-size: 1.1em; /* Slightly larger text */
         text-shadow: none; /* Remove glow if it's too harsh */
     }
+}
+
+/* ✅ Responsive Fix: Keep full-width on mobile */
+@media screen and (max-width: 768px) {
+    .page-container {
+        max-width: 100%; /* Allow full width on small screens */
+        padding: 10px;
+        border-radius: 0; /* Remove rounded edges on mobile */
+    }
+}
+
+/* ✅ Fix keyframes to smooth breathing effect */
+@keyframes breathing {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
 }
