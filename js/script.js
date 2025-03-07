@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("✅ script.js is loaded");
 
-    // Ensure navigation links are working
-    document.querySelectorAll(".nav a").forEach(link => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default navigation
-            const page = this.getAttribute("onclick").match(/'([^']+)'/)[1];
-            console.log(`🔄 Loading: ${page}`);
-            loadContent(page);
-        });
-    });
-
     // Load default page
     loadContent("sections/about.html");
+
+    // Hide banner when user navigates
+    document.querySelectorAll(".nav a").forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const page = this.getAttribute("data-page");
+            loadContent(page);
+            hideBanner(); // Hide the banner on navigation
+        });
+    });
 });
 
 function loadContent(page) {
@@ -35,3 +35,15 @@ function loadContent(page) {
             document.getElementById("content").innerHTML = "<h2>Page not found</h2>";
         });
 }
+
+// Hide banner on navigation or scroll
+function hideBanner() {
+    document.getElementById("banner").style.display = "none";
+}
+
+// Hide banner when scrolling
+window.addEventListener("scroll", function () {
+    if (window.scrollY > 50) { // Adjust threshold if needed
+        hideBanner();
+    }
+});
