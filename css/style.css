@@ -218,6 +218,15 @@ h6 {
     100% { transform: scale(1); }
 }
 
+@media screen and (max-width: 768px) {
+    .banner {
+        height: 100vh; /* Ensure it fully covers the viewport */
+        background-size: contain; /* Ensures full image visibility */
+        background-position: center top; /* Adjusts positioning */
+    }
+}
+
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     h1 {
